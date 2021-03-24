@@ -25,4 +25,9 @@ requirePathOnce(dirname(__file__) . "/");
 
 use pimine\Server;
 
-$server = new Server();
+if (PHP_INT_SIZE < 8) {
+	echo("[ERROR] PiMine only supports 64bit hosts.\n");
+	echo("> Please consider using 64bit php binaries.\n");
+} else {
+	$server = new Server();
+}
