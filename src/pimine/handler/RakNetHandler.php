@@ -13,7 +13,7 @@ class RakNetHandler {
 		$this->server = $server;
 	}
 
-	public function handle(string $data, InternetAddress $address) {
+	public function handle(string $data, InternetAddress $address): void {
 		if (strlen($data) > 0) {
 			$this->server->logger->log("info", "0x" . bin2hex($data[0])); // DEBUG
 		}
