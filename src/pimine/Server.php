@@ -47,7 +47,7 @@ class Server {
 		$diffTime = $finishTime - $startTime;
 		$dtfa = explode(".", (string) $diffTime);
 		$dtf = $dtfa[0] . "." . substr($dtfa[1], 0, 3);
-		$this->logger->log("success", "Done in " . $dtf . ". Type help to view all available commands.");
+		$this->logger->log("success", "Done in " . $dtf . ". Type 'help' or '?' to view all available commands.");
 		while (!$this->stopped) {
 			stream_set_blocking(STDIN, false);
 			$command .= fread(STDIN, 1);
