@@ -11,7 +11,7 @@ class CommandHandler {
 		$this->server = $server;
 	}
 
-	public function handleCommand(string $userInput): void {
+	public function handle(string $userInput): void {
 		if (strlen($userInput) > 0) {
 			$rawCommand = explode(" ", $userInput);
 			$name = $rawCommand[0];
