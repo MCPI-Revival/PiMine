@@ -4,6 +4,7 @@ declare(strict_types = 1);
 
 namespace pimine;
 
+use pimine\constant\Misc;
 use pimine\constant\TextFormat;
 use pimine\command\HelpCommand;
 use pimine\command\StopCommand;
@@ -39,6 +40,7 @@ class Server {
 	}
 
 	public function start(): void {
+		echo(Misc::PIMINE_LOGO . "\n");
 		$startTime = (float) microtime();
 		$this->registerVanillaCommands();
 		$this->stopped = false;
