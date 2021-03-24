@@ -12,7 +12,7 @@ class VersionCommand extends Command {
 		parent::__construct("version", "Version Command", ["ver"]);
 	}
 
-	public function execute(array $args, object &$sender, object &$server) {
+	public function execute(array $args, object &$sender, object &$server): void {
 		$out = "This server is running PiMine version ";
 		$out .= Version::PIMINE_VERSION;
 		$out .= " ";
