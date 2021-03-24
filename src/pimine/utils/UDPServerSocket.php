@@ -10,7 +10,7 @@ class UDPServerSocket {
 	public $version;
 	public $socket;
 
-	public function __construct(string $address, int $port, $version = 4) {
+	public function __construct(string $address, int $port, int $version = 4): void {
 		$this->address = $address;
 		$this->port = $port;
 		$this->version = $version;
@@ -31,11 +31,11 @@ class UDPServerSocket {
 		}
 	}
 
-	public function receive(&$data, &$address, &$port) {
+	public function receive(string &$data, string &$address, int &$port): int {
 		return @socket_recvfrom($this->socket, $data, 65535, 0, $address, $port);
 	}
 
-	public function send($data, $address, $port) {
+	public function send(string $data, string $address, int $port): int {
 		return @socket_sendto($this->socket, $data, strlen($data), 0, $address, $port);
 	}
 }
