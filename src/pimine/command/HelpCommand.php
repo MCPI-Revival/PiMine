@@ -11,7 +11,7 @@ class HelpCommand extends Command {
 		parent::__construct("help", "Help Command", ["?"]);
 	}
 
-	public function execute(array $args, object &$sender, object &$server) {
+	public function execute(array $args, object &$sender, object &$server): void {
 		foreach ($server->commandManager->commands as $command) {
 			$server->logger->log("info", "/". $command->name . ": " . $command->description);
 		}
