@@ -4,7 +4,7 @@ declare(strict_types = 1);
 
 namespace pimine;
 
-function requirePathOnce(string $dir) {
+function requirePathOnce(string $dir): void {
 	if (is_dir($dir)) {
 		if ($dh = opendir($dir)) {
 			while ($file = readdir($dh)) {
