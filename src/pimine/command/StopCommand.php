@@ -11,7 +11,7 @@ class StopCommand extends Command {
 		parent::__construct("stop", "Stop Command");
 	}
 
-	public function execute(array $args, object &$sender, object &$server) {
+	public function execute(array $args, object &$sender, object &$server): void {
 		$server->logger->log("info", "Stopping server...");
 		$server->stopped = true;
 		$server->logger->log("success", "Server Stopped.");
