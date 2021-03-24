@@ -40,7 +40,7 @@ class BinaryStream {
 		return unpack("C", $this->read(1))[1];
 	}
 
-	public function writeUnsignedByte(int $value) {
+	public function writeUnsignedByte(int $value): void {
 		$this->write(pack("C", $value));
 	}
 	
@@ -48,7 +48,7 @@ class BinaryStream {
 		return $this->readUnsignedByte() > 0;
 	}
 
-	public function writeBool(int $value): void {
+	public function writeBool(bool $value): void {
 		$this->writeUnsignedByte($value ? 0x01 : 0x00);
 	}
 	
@@ -176,19 +176,19 @@ class BinaryStream {
 		$this->write(pack("g", $value));
 	}
 	
-	public function readDoubleBE(): float {
+	public function readDoubleBE(): double {
 		return unpack("E", $this->read(8))[1];
 	}
 
-	public function writeDoubleBE(float $value): void {
+	public function writeDoubleBE(double $value): void {
 		$this->write(pack("E", $value));
 	}
 	
-	public function readDoubleLE(): float {
+	public function readDoubleLE(): double {
 		return unpack("e", $this->read(8))[1];
 	}
 
-	public function writeDoubleLE(float $value): void {
+	public function writeDoubleLE(double $value): void {
 		$this->write(pack("e", $value));
 	}
 }
