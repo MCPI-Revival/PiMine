@@ -7,7 +7,7 @@ namespace pimine\utils;
 use pimine\constant\TextFormat;
 
 class Logger {
-	public function log(string $type, string $content) {
+	public function log(string $type, string $content): void {
 		switch (strtolower($type)) {
 			case "info":
 				$color = TextFormat::LIGHT_BLUE;
