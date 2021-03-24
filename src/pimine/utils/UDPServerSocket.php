@@ -31,8 +31,8 @@ class UDPServerSocket {
 		}
 	}
 
-	public function receive(string &$data, string &$address, int &$port): int {
-		return @socket_recvfrom($this->socket, $data, 65535, 0, $address, $port);
+	public function receive(string &$data, string &$address, int &$port): void {
+		@socket_recvfrom($this->socket, $data, 65535, 0, $address, $port);
 	}
 
 	public function send(string $data, string $address, int $port): int {
