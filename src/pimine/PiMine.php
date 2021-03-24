@@ -4,19 +4,24 @@ declare(strict_types = 1);
 
 namespace pimine;
 
-$dir = dirname(__file__) . "/";
-$dh  = opendir($dir);
-$dir_list = array($dir);
-while (false !== ($filename = readdir($dh))) {
-	if ($filename != "." && $filename != ".." && is_dir($dir . $filename)) {
-		array_push($dir_list, $dir . $filename . "/");
+function require_path(string $dir) {
+	if (is_dir($dir)) {
+		if ($dh = opendir($dir)) {
+			while ($file = readdir($dh)) {
+				if ($file != '.' && $file != '..') {
+					if (is_dir($dir . $file)) {
+						require_path($dir . $file . "/");
+					} elseif (strtolower(substr($dir . $file, -4)) === ".php") {
+						require_once($dir . $file);
+					}
+				}
+			}
+		}
+		closedir($dh);
 	}
 }
-foreach ($dir_list as $dir) {
-	foreach (glob($dir . "*.php") as $filename) {
-		require_once $filename;
-	}
-}
+
+require_path(dirname(__file__) . "/");
 
 use pimine\Server;
 
