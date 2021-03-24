@@ -10,7 +10,7 @@ class UDPServerSocket {
 	public $version;
 	public $socket;
 
-	public function __construct(string $address, int $port, int $version = 4): void {
+	public function __construct(string $address, int $port, int $version = 4) {
 		$this->address = $address;
 		$this->port = $port;
 		$this->version = $version;
