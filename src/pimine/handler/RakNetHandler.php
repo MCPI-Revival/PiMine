@@ -7,7 +7,7 @@ namespace pimine\handler;
 use pimine\utils\InternetAddress;
 
 class RakNetHandler {
-	public object $server;
+	public $server;
 
 	public function __construct(object &$server) {
 		$this->server = $server;
