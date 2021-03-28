@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace pimine\manager;
 
 class CommandManager {
-	public object $server;
+	public $server;
 	public array $commands;
 
 	public function __construct(object &$server) {
