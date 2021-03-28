@@ -5,7 +5,7 @@ declare(strict_types = 1);
 namespace pimine\handler;
 
 class CommandHandler {
-	public object $server;
+	public $server;
 
 	public function __construct(object &$server) {
 		$this->server = $server;
