@@ -21,7 +21,11 @@ function requirePathOnce(string $dir): void {
 	}
 }
 
-requirePathOnce(dirname(__file__) . "/");
+//requirePathOnce(dirname(__file__) . "/");
+
+spl_autoload_register(function ($class_name) {
+	include dirname(dirname(__file__)) . "/" . str_replace("\\", "/", $class_name) . ".php";
+});
 
 use pimine\Server;
 
