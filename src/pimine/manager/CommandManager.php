@@ -6,7 +6,7 @@ namespace pimine\manager;
 
 class CommandManager {
 	public $server;
-	public array $commands;
+	public $commands;
 
 	public function __construct(object &$server) {
 		$this->server = $server;
