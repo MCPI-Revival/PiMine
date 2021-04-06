@@ -5,6 +5,7 @@ declare(strict_types = 1);
 namespace pimine\command;
 
 use pimine\command\Command;
+use pimine\constant\MCPIProtocolInfo;
 use pimine\constant\Version;
 
 class VersionCommand extends Command {
@@ -20,9 +21,9 @@ class VersionCommand extends Command {
 		$out .= " on API ";
 		$out .= Version::PIMINE_API_VERSION;
 		$out .= " for mcpi ";
-		$out .= Version::MCPI_VERSION;
+		$out .= MCPIProtocolInfo::VERSION;
 		$out .= " (";
-		$out .= Version::MCPI_PROTOCOL_VERSION;
+		$out .= MCPIProtocolInfo::PROTOCOL_VERSION;
 		$out .= "). This version is licensed under the ";
 		$out .= Version::PIMINE_LICENSE;
 		$out .=  " license.";
