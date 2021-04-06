@@ -6,5 +6,5 @@ namespace pimine\constant;
 
 class MCPIProtocolInfo {
 	public const PROTOCOL_VERSION = 5;
-	public const VERSION = "0.6.1;
+	public const VERSION = "0.6.1";
 }
