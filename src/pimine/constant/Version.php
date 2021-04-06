@@ -9,7 +9,6 @@ class Version {
 	public const PIMINE_API_VERSION = "0.0.1";
 	public const PIMINE_CODENAME = "Raspberry";
 	public const PIMINE_LICENSE = "MIT";
-	public const RAKNET_PROTOCOL_VERSION = 5;
 	public const MCPI_VERSION = "0.6.1";
 	public const MCPI_PROTOCOL_VERSION = 9;
 }
