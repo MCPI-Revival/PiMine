@@ -15,5 +15,5 @@ abstract class Command {
 		$this->aliases = $aliases;
 	}
 
-	abstract function execute(array $args, object &$sender, object &$server): void;
+	abstract function execute(array $args, object &$sender): void;
 }

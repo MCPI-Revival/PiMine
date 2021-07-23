@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace pimine\manager;
+namespace pimine\command;
 
 class CommandManager {
 	public $server;
@@ -34,12 +34,12 @@ class CommandManager {
 	public function execute(string $name, array $args, object $sender): void {
 		foreach ($this->commands as $key => $value) {
 			if ($value->name === $name) {
-				$this->commands[$key]->execute($args, $sender, $this->server);
+				$this->commands[$key]->execute($args, $sender);
 				return;
 			}
 			foreach ($value->aliases as $aName) {
 				if ($aName == $name) {
-					$this->commands[$key]->execute($args, $sender, $this->server);
+					$this->commands[$key]->execute($args, $sender);
 					return;
 				}
 			}

@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace pimine\utils;
+namespace pimine\network;
 
 class InternetAddress {
 	public $address;

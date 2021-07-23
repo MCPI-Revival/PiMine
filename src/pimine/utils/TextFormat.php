@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace pimine\constant;
+namespace pimine\utils;
 
 class TextFormat {
 	public const BLACK = "\x1b[0;30m";

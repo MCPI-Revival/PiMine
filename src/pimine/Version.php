@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace pimine\constant;
+namespace pimine;
 
 class Version {
 	public const PIMINE_VERSION = "0.0.6";

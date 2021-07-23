@@ -2,9 +2,10 @@
 
 declare(strict_types = 1);
 
-namespace pimine\handler;
+namespace pimine\network;
 
-use pimine\utils\InternetAddress;
+use pimine\network\InternetAddress;
+use pimine\utils\Logger;
 
 class RakNetHandler {
 	public $server;
@@ -15,7 +16,7 @@ class RakNetHandler {
 
 	public function handle(string $data, InternetAddress $address): void {
 		if (strlen($data) > 0) {
-			$this->server->logger->log("info", "0x" . bin2hex($data[0])); // DEBUG
+			Logger::info("0x" . bin2hex($data[0])); // DEBUG
 		}
 	}
 }

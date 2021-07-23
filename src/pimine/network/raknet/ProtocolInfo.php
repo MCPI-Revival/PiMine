@@ -2,9 +2,9 @@
 
 declare(strict_types = 1);
 
-namespace pimine\constant;
+namespace pimine\network\raknet;
 
-class RakNetProtocolInfo {
+class ProtocolInfo {
 	public const PROTOCOL_VERSION = 5;
 	public const ONLINE_PING = 0x00;
 	public const OFFLINE_PING = 0x01;
